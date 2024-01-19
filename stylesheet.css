@@ -7,7 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'rubik', sans-serif;
-    font-weight: 800;
+    font-weight: 500;
     color: white;
 }
 
@@ -17,6 +17,24 @@ html {
 
 body {
     background-color: 	#0a0a0a;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 80px;
+    transition: 0.5s;
+    z-index: 1000;
+    background: rgb(18, 18, 18);
+    box-shadow: 0px 10px 10px black;
+
 }
 
 /* Header Navigation Bar */
@@ -30,16 +48,16 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 25px 50px;
+    padding: 10px 80px;
     transition: 0.5s;
-
+    z-index: 1000;
     background: rgb(18, 18, 18);
     box-shadow: 0px 10px 10px black;
 
 }
 
 header.shiftColor {
-    padding: 20px 100px;
+    padding: 7px 100px;
     background: white;
     box-shadow: 0px -1px 25px rgb(66, 255, 49);
 }
@@ -88,10 +106,14 @@ header ul a {
     transition: 0.5s;
 }
 
-
 .roundedPicture {
     height: 60px;
     border-radius: 100%;
+}
+
+.boardedPicture {
+    border-radius: 5px;
+    height: 385px;
 }
 
 .prof_container {
@@ -103,17 +125,38 @@ header ul a {
     height: calc(1080px - 300px);
 }
 
+.paragraph-limiter {
+    font-size: 18px;
+    width: 540px;
+    margin-top: 15px;
+    margin-left: 50px;
+    line-height: 30px;
+    text-align: justify;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-desc {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
 .skills_container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
 }
 
-.skills_title {
-    margin-top: 30px;
+.title {
+    margin-top: 118px;
     font-weight: 900;
     font-size: 80px;
     letter-spacing: 5px;
@@ -122,7 +165,7 @@ header ul a {
 .container_box {
     /* background-color: red; */
     display: flex;
-    margin-top: 30px;
+    margin-top: 50px;
     justify-content: space-evenly;
     width: 1600px;
     height: 300px;
@@ -142,9 +185,36 @@ header ul a {
     transition: 0.5s;
 }
 
+.embedded-elements {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+}
+
 .titleSkill {
+    border-bottom: 5px solid;
+    border-radius: 5px;;
     font-weight: 900;
     font-size: 30px;
+}
+
+.project-box {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    width: 400px;
+    border-radius: 10px;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.project-box a {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
 }
 
 .padding td {
@@ -231,6 +301,28 @@ header .icon:hover .scrollEffect {
     height: 320px;
 }
 
+.centered-items {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SubTitle {
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+
+.achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 .prof_description {
     margin-top: 5px;
     font-size: 22px;
@@ -238,6 +330,16 @@ header .icon:hover .scrollEffect {
     animation: profDesc 3s;
 }
 
+#contacts a img {
+    height: 60px;
+    transition: 0.5s;
+}
+
+.combine {
+    display: flex;
+    width: 500px;
+    justify-content: space-evenly;
+}
 .nameEffect {
     display: block;
     border-right: 5px solid;
@@ -251,9 +353,18 @@ header .icon:hover .scrollEffect {
         nameTextEffect 2s;
 }
 
+#contacts a img:hover {
+    transform: translateY(-15px) scale(1.10);
+}
+
 .skills_box:hover {
     box-shadow: 0px 5px 10px rgb(66, 255, 49);
-    transform: translateY(-15px);
+    transform: translateY(-15px) scale(1.10);
+}
+
+.project-box:hover {
+    box-shadow: 0px 5px 10px rgb(66, 255, 49);
+    transform: scale(1.05);
 }
 
 /* animations */
@@ -276,3 +387,16 @@ header .icon:hover .scrollEffect {
     }
 }
 
+@media (max-width: 968px) {
+    .container_box {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 460px;
+        margin-bottom: 360px;
+        width: 100%;
+    }
+
+    .skills_box {
+        padding: 40px;
+    }
+}
